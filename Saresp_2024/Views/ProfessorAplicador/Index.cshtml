@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Saresp_2024.Models.ProfessorAplicador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="CadastrarProfessorAplicador" asp-asp-controller="ProfessorAplicador">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProfessor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNasc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (ProfessorAplicador professorAplicador in Model) {
+        <tr>
+            <td>
+                @professorAplicador.IdProfessor
+            </td>
+            <td>
+                @professorAplicador.NomeProf
+            </td>
+            <td>
+                @professorAplicador.RG
+            </td>
+            <td>
+                @professorAplicador.Telefone
+            </td>
+            <td>
+                @professorAplicador.CPF
+            </td>
+            <td>
+                @professorAplicador.DataNasc.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                    <button type="button" class="btn btn-warning">
+                        @Html.ActionLink("Editar", "AtualizarProfessorAplicador", new { id = professorAplicador.IdProfessor })
+                    </button>
+                    <button type="button" class="btn btn-secondary">
+                        @Html.ActionLink("Detalhes", "DetalhesProfessorAplicador", new { id = professorAplicador.IdProfessor })
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        @Html.ActionLink("Excluir", "ExcluirProfessorAplicador", new { id = professorAplicador.IdProfessor },
+                                 new { onclick = "return confirm('Deseja realmente desativar?');" })
+                    </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
