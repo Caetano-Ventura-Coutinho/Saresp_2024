@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProfessorAplicadorRepository, ProfessorAplicadorRepository>();
 
+builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 
 var app = builder.Build();
 

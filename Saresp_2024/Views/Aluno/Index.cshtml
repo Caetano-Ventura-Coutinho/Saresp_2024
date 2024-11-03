@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Saresp_2024.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="CadastrarAluno" asp-asp-controller="Aluno">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNasc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Aluno aluno in Model) {
+        <tr>
+            <td>
+                @aluno.IdAluno
+            </td>
+            <td>
+                @aluno.NomeAluno
+            </td>
+            <td>
+                @aluno.Email
+            </td>
+            <td>
+                @aluno.Turma
+            </td>
+            <td>
+                @aluno.Telefone
+            </td>
+            <td>
+                @aluno.Serie
+            </td>
+            <td>
+                @aluno.DataNasc.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                    <button type="button" class="btn btn-warning">
+                        @Html.ActionLink("Editar", "AtualizarAluno", new { id = aluno.IdAluno })
+                    </button>
+                    <button type="button" class="btn btn-secondary">
+                        @Html.ActionLink("Detalhes", "DetalhesAluno", new { id = aluno.IdAluno })
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        @Html.ActionLink("Excluir", "ExcluirAluno", new { id = aluno.IdAluno },
+                                 new { onclick = "return confirm('Deseja realmente desativar?');" })
+                    </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

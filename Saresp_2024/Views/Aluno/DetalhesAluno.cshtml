@@ -1,32 +1,38 @@
-﻿@model Saresp_2024.Models.ProfessorAplicador
+﻿@model Saresp_2024.Models.Aluno
 
 @{
-    ViewData["Title"] = "DetalhesProfessorAplicador";
+    ViewData["Title"] = "DetalhesAluno";
 }
 
-<h1>DetalhesProfessorAplicador</h1>
+<h1>DetalhesAluno</h1>
 
 <div>
-    <h4>ProfessorAplicador</h4>
+    <h4>Aluno</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdProfessor)
+            @Html.DisplayNameFor(model => model.IdAluno)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdProfessor)
+            @Html.DisplayFor(model => model.IdAluno)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NomeProf)
+            @Html.DisplayNameFor(model => model.NomeAluno)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NomeProf)
+            @Html.DisplayFor(model => model.NomeAluno)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RG)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RG)
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Turma)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Turma)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Telefone)
@@ -35,10 +41,10 @@
             @Html.DisplayFor(model => model.Telefone)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPF)
+            @Html.DisplayNameFor(model => model.Serie)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPF)
+            @Html.DisplayFor(model => model.Serie)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DataNasc)
@@ -49,6 +55,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Editar", "AtualizarProfessorAplicador", new { id = Model.IdProfessor }) |
+    @Html.ActionLink("Editar", "AtualizarAluno", new { id = Model.IdAluno }) |
     <a asp-action="Index">Back to List</a>
 </div>

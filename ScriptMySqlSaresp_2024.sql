@@ -15,7 +15,7 @@ IdAluno int auto_increment primary key,
 Nome varchar(200) not null,
 Email varchar(200) not null,
 Serie int not null, 
-Turma char(1),
+Turma char(1) not null,
 Telefone decimal(11,0) not null,
 DataNascimento datetime not null
 )
